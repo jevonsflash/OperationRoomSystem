@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="OperationRoomSystemPC.Control.RichTextEditor"
+             x:Name="uxRichTextEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:common="clr-namespace:OperationRoomSystemPC.Common">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}"
+                   x:Key="formatTextStyle">
+                <Setter Property="FontFamily"
+                        Value="Palatino Linotype"></Setter>
+                <Setter Property="Width"
+                        Value="30"></Setter>
+                <Setter Property="FontSize"
+                        Value="14"></Setter>
+                <Setter Property="CommandTarget"
+                        Value="{Binding ElementName=mainRTB}"></Setter>
+            </Style>
+
+            <Style TargetType="{x:Type Button}"
+                   x:Key="formatImageStyle">
+                <Setter Property="Width"
+                        Value="30"></Setter>
+                <Setter Property="CommandTarget"
+                        Value="{Binding ElementName=mainRTB}"></Setter>
+            </Style>
+        </Grid.Resources>
+
+        <DockPanel Name="mainPanel">
+            <ToolBar Height="30"
+                     DockPanel.Dock="Top"
+                     ToolBarTray.IsLocked="True"
+                     Visibility="{Binding ElementName=uxRichTextEditor,Path=IsToolVisible,Converter={StaticResource Bool2VisibilityConverter}}">
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="ApplicationCommands.Cut"
+                        ToolTip="Cut">
+                    <Image Source="../Icon/RichTextEditorIcon/editcut.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="ApplicationCommands.Copy"
+                        ToolTip="Copy">
+                    <Image Source="../Icon/RichTextEditorIcon/EditCopy.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="ApplicationCommands.Paste"
+                        ToolTip="Paste">
+                    <Image Source="../Icon/RichTextEditorIcon/EditPaste.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="ApplicationCommands.Undo"
+                        ToolTip="Undo">
+                    <Image Source="../Icon/RichTextEditorIcon/EditUndo.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="ApplicationCommands.Redo"
+                        ToolTip="Redo">
+                    <Image Source="../Icon/RichTextEditorIcon/EditRedo.png"></Image>
+                </Button>
+
+                <Button Style="{StaticResource formatTextStyle}"
+                        Command="EditingCommands.ToggleBold"
+                        ToolTip="Bold">
+                    <TextBlock FontWeight="Bold">B</TextBlock>
+                </Button>
+                <Button Style="{StaticResource formatTextStyle}"
+                        Command="EditingCommands.ToggleItalic"
+                        ToolTip="Italic">
+                    <TextBlock FontStyle="Italic"
+                               FontWeight="Bold">I</TextBlock>
+                </Button>
+                <Button Style="{StaticResource formatTextStyle}"
+                        Command="EditingCommands.ToggleUnderline"
+                        ToolTip="Underline">
+                    <TextBlock TextDecorations="Underline"
+                               FontWeight="Bold">U</TextBlock>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.IncreaseFontSize"
+                        ToolTip="Grow Font">
+                    <Image Source="../Icon/RichTextEditorIcon/CharacterGrowFont.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.DecreaseFontSize"
+                        ToolTip="Shrink Font">
+                    <Image Source="../Icon/RichTextEditorIcon/CharacterShrinkFont.png"></Image>
+                </Button>
+
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.ToggleBullets"
+                        ToolTip="Bullets">
+                    <Image Source="../Icon/RichTextEditorIcon/ListBullets.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.ToggleNumbering"
+                        ToolTip="Numbering">
+                    <Image Source="../Icon/RichTextEditorIcon/editcopy.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.AlignLeft"
+                        ToolTip="Align Left">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphLeftJustify.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.AlignCenter"
+                        ToolTip="Align Center">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphCenterJustify.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.AlignRight"
+                        ToolTip="Align Right">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphRightJustify.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.AlignJustify"
+                        ToolTip="Align Justify">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphFullJustify.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.IncreaseIndentation"
+                        ToolTip="Increase Indent">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphIncreaseIndentation.png"></Image>
+                </Button>
+                <Button Style="{StaticResource formatImageStyle}"
+                        Command="EditingCommands.DecreaseIndentation"
+                        ToolTip="Decrease Indent">
+                    <Image Source="../Icon/RichTextEditorIcon/ParagraphDecreaseIndentation.png"></Image>
+                </Button>
+            </ToolBar>
+            <StackPanel>
+                <RichTextBox Name="mainRTB"
+                             AcceptsTab="True"
+                             GotFocus="MainRTB_OnGotFocus"
+                             LostFocus="MainRTB_OnLostFocus"
+                             IsEnabled="{Binding ElementName=uxRichTextEditor,Path=IsToolVisible}"
+                             MinHeight="240"
+                             MaxHeight="360"
+                             common:RichTextboxAssistant.BoundDocument="{Binding Path=Text, ElementName=uxRichTextEditor}"
+                             VerticalScrollBarVisibility="Visible" />
+            </StackPanel>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

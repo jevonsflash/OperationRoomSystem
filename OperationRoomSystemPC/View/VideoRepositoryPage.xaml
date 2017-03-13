@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="OperationRoomSystemPC.View.VideoRepositoryPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+             xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+             DataContext="{Binding Source={StaticResource Locator}, Path=VideoRepositoryPage}"
+             mc:Ignorable="d"
+             d:DesignHeight="1080"
+             d:DesignWidth="1920"
+             >
+
+    <Grid>
+
+        <ListView Background="Transparent"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Margin="20">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListViewItem>
+                <Grid Width="320"
+                      Height="580">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9.5*"></RowDefinition>
+                        <RowDefinition Height="2.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Fill="White"
+                               Grid.RowSpan="2"
+                               Opacity="0.5"></Rectangle>
+                    <StackPanel Grid.Row="0"
+                                Margin="20,20">
+
+
+                        <control:SimpleKeyValueControl KeyText="视屏个数"
+                                                       ValueText=" PatientNo"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术日期"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding DeptName}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术部位"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding Birthday }"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="切口等级"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="愈合等级"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术描述"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                    </StackPanel>
+                    <Grid Margin="20,0"
+                          Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="0"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/video.png"></Image>
+                        </Button>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="1"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/pic.png"></Image>
+                        </Button>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="2"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/doct.png"></Image>
+                        </Button>
+
+                    </Grid>
+
+                </Grid>
+
+            </ListViewItem>
+            <ListViewItem>
+                <Grid Width="320"
+                      Height="580">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9.5*"></RowDefinition>
+                        <RowDefinition Height="2.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Rectangle Fill="White"
+                               Grid.RowSpan="2"
+                               Opacity="0.5"></Rectangle>
+                    <StackPanel Grid.Row="0"
+                                Margin="20,20">
+
+
+                        <control:SimpleKeyValueControl KeyText="视屏个数"
+                                                       ValueText=" PatientNo"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术日期"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding DeptName}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术部位"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding Birthday }"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="切口等级"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="愈合等级"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                        <control:SimpleKeyValueControl KeyText="手术描述"
+                                                       TextColor="{StaticResource ApplicationSelectedBackgroundBrush}"
+                                                       ValueText="{Binding StartTime}"></control:SimpleKeyValueControl>
+                    </StackPanel>
+                    <Grid Margin="20,0"
+                          Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="0"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/video.png"></Image>
+                        </Button>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="1"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/pic.png"></Image>
+                        </Button>
+                        <Button Width="48"
+                                Height="48"
+                                Grid.Column="2"
+                                Background="{StaticResource IconBrush2}"
+                                Style="{DynamicResource MetroCircleButtonStyle}">
+
+                            <Image Margin="10"
+                                   Source="../Icon/doct.png"></Image>
+                        </Button>
+
+                    </Grid>
+
+                </Grid>
+
+            </ListViewItem>
+
+        </ListView>
+
+    </Grid>
+</UserControl>

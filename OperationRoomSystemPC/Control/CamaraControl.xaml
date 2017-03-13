@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="OperationRoomSystemPC.Control.CamaraControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:OperationRoomSystemPC.Control"
+             mc:Ignorable="d">
+    <Grid Height="91"
+          Width="325">
+        <Canvas Height="91"
+                VerticalAlignment="Top">
+            <Button x:Name="btnUp"
+                    MouseUp="btnUp_MouseUp"
+                    MouseDown="btnUp_MouseDown"
+                    Content="Up"
+                    Height="38"
+                    Width="100"
+                    Canvas.Left="110"
+                    Canvas.Top="10"></Button>
+            <Button x:Name="btnAuto"
+                    Click="btnAuto_Click"
+                    Content="Auto"
+                    Height="38"
+                    Width="100"
+                    Canvas.Left="10"
+                    Canvas.Top="10"></Button>
+            <Button x:Name="btnDown"
+                    MouseUp="btnDown_MouseUp"
+                    MouseDown="btnDown_MouseDown"
+                    Content="Down"
+                    Height="38"
+                    Width="100"
+                    Canvas.Left="110"
+                    Canvas.Top="48"></Button>
+            <Button x:Name="btnRight"
+                    Content="Right"
+                    MouseUp="btnRight_MouseUp"
+                    MouseDown="btnRight_MouseDown"
+                    Height="38"
+                    Width="100"
+                    Canvas.Left="210"
+                    Canvas.Top="48"></Button>
+            <Button x:Name="btnLeft"
+                    MouseUp="btnLeft_MouseUp"
+                    MouseDown="btnLeft_MouseDown"
+                    Content="Left"
+                    Height="38"
+                    Width="100"
+                    Canvas.Left="10"
+                    Canvas.Top="48"></Button>
+
+            <ComboBox x:Name="comboBoxSpeed"
+                      Canvas.Left="215"
+                      Canvas.Top="10"></ComboBox>
+        </Canvas>
+    </Grid>
+</UserControl>

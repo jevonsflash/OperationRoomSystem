@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="OperationRoomSystemPC.View.RealTimeOperationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpf="clr-namespace:Vlc.DotNet.Wpf;assembly=Vlc.DotNet.Wpf"
+             xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+             DataContext="{Binding Source={StaticResource Locator}, Path=RealTimeOperationPage}"
+             mc:Ignorable="d">
+
+    <Grid>
+        <Label>实时手术页面</Label>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="11*" />
+                <RowDefinition Height="*" />
+
+
+
+            </Grid.RowDefinitions>
+
+            <wpf:VlcControl Height="1024"
+                            Width="1920"
+                            Grid.Row="0"
+                            x:Name="myControl" />
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+                <StackPanel>
+                    <Button Height="32" Click="OnPlayButtonClick">播放</Button>
+
+                    <Button Height="32"
+                            Click="OnStopButtonClick"
+                            x:Name="Forward">停止</Button>
+                </StackPanel>
+                <control:CamaraControl></control:CamaraControl>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

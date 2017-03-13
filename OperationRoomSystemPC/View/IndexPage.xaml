@@ -1,0 +1,522 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.IndexPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      DataContext="{Binding Source={StaticResource Locator}, Path=IndexPage}"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Background="{StaticResource ApplicationBackgroundBrush}"
+      Title="IndexPage">
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0"
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1"
+                  Margin="0,50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ListView Background="Transparent"
+                          HorizontalAlignment="Right"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource LargeTileStyle}"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="OperationHubPage">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/operation_room.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                    <control:SimpleKeyValueControl KeyText="手术医生"
+                                                                   TextSize="{StaticResource SmailFontSize}"
+                                                                   TextColor="{StaticResource ApplicationForegroundBrush}"></control:SimpleKeyValueControl>
+                                    <control:SimpleKeyValueControl KeyText="术前诊断"
+                                                                   TextSize="{StaticResource SmailFontSize}"
+                                                                   TextColor="{StaticResource ApplicationForegroundBrush}"></control:SimpleKeyValueControl>
+                                </StackPanel>
+                            </Grid>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="VideoHubPage"
+                                  Title="视频管理"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_视频管理.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush2}"
+                                  Title="历次手术"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_历次手术.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Title="麻醉系统"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_麻醉系统.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center"
+                                  Title="检查">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/exam.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+
+
+                        </mah:Tile>
+                    </ListViewItem>
+
+                </ListView>
+                <ListView Background="Transparent"
+                          Grid.Column="1"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Title="全部记录"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/keyboard.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush1}"
+                                  Title="入院病例"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_入院记录.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush2}"
+                                  Title="日常病程"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_日常病程.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush3}"
+                                  Title="上级查房"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_上级查房.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush2}"
+                                  Title="会诊记录"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="ConsultationHubPage"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_会诊记录.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush1}"
+                                  Title="转诊记录"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="ReferralRecordPage"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_转诊记录.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Title="生命曲线"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_生命曲线.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+
+                </ListView>
+
+            </Grid>
+            <Grid Grid.Column="3"
+                  Margin="0,50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ListView Background="Transparent"
+                          HorizontalAlignment="Right"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Title="综合影像"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_pic.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+
+                        </mah:Tile>
+                    </ListViewItem>
+
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_PA.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_PET.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_DSR.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_RF.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  Title="手术计划"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="OperationPlanPage"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_手术计划.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush5}"
+                                  HorizontalTitleAlignment="Center"
+                                  Title="医嘱">
+                            <Image Source="../Icon/icon_医嘱.png"
+                                   Height="60"></Image>
+
+
+
+                        </mah:Tile>
+                    </ListViewItem>
+
+                </ListView>
+                <ListView Background="Transparent"
+                          Grid.Column="1"
+                          HorizontalAlignment="Left"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_MR.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_US.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_CT.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_DR.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_GS.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem Margin="-5,0">
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush4}"
+                                  HorizontalTitleAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2"
+                                       Source="../Assets/xray_CR.png"></Image>
+                                <StackPanel Grid.Row="1"
+                                            Opacity="0.9"
+                                            Background="{StaticResource TileBrush5}">
+                                </StackPanel>
+                            </Grid>
+                        </mah:Tile>
+                    </ListViewItem>
+
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource MidTileStyle}"
+                                  Background="{StaticResource TileBrush1}"
+                                  Title="病案信息"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_病案信息.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <mah:Tile Style="{StaticResource SmallTileStyle}"
+                                  Background="{StaticResource TileBrush3}"
+                                  Title="电子病历"
+                                  Command="{Binding GoPageCommand}"
+                                  CommandParameter="EMRHubPage"
+                                  HorizontalTitleAlignment="Center">
+                            <Image Source="../Icon/icon_病情摘要.png"
+                                   Height="60"></Image>
+
+                        </mah:Tile>
+                    </ListViewItem>
+
+                </ListView>
+
+            </Grid>
+        </Grid>
+        <control:TopBarControl Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalAlignment="Top"
+                               Grid.ColumnSpan="2"
+                               Grid.RowSpan="2"></control:TopBarControl>
+
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom">
+            <control:SideBarControl ShowParam="logout,shutdown"></control:SideBarControl>
+        </StackPanel>
+    </Grid>
+
+</Page>

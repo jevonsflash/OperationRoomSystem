@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:OperationRoomSystemPC.Style"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="Version">3.2.0</system:String>
+
+    <system:Double x:Key="LargeFontSize">32</system:Double>
+
+    <system:Double x:Key="NormalFontSize">22</system:Double>
+
+    <system:Double x:Key="SmailFontSize">18</system:Double>
+
+    <system:String x:Key="Bound">0</system:String>
+
+
+    <SolidColorBrush x:Key="ApplicationForegroundBrush">White</SolidColorBrush>
+
+    <SolidColorBrush x:Key="ApplicationContrastBackgroundBrush">#0076d6</SolidColorBrush>
+
+    <SolidColorBrush x:Key="ApplicationContrastBackgroundBrush2">#58a1e8</SolidColorBrush>
+
+
+    <SolidColorBrush x:Key="ApplicationContrastForegroundBrush">White</SolidColorBrush>
+
+    <SolidColorBrush x:Key="ApplicationSelectedBackgroundBrush">#176eb6</SolidColorBrush>
+
+    <SolidColorBrush x:Key="TileBrush1">#2fadb2</SolidColorBrush>
+    <SolidColorBrush x:Key="TileBrush2">#218de0</SolidColorBrush>
+    <SolidColorBrush x:Key="TileBrush3">#58a1e8</SolidColorBrush>
+    <SolidColorBrush x:Key="TileBrush4">#576fcc</SolidColorBrush>
+    <SolidColorBrush x:Key="TileBrush5">#0076d6</SolidColorBrush>
+
+    <SolidColorBrush x:Key="IconBrush1">#d6ac41</SolidColorBrush>
+    <SolidColorBrush x:Key="IconBrush2">#3c7acc</SolidColorBrush>
+    <SolidColorBrush x:Key="IconBrush3">#36cf5e</SolidColorBrush>
+
+    <SolidColorBrush x:Key="ApplicationAccentBrush">Red</SolidColorBrush>
+    <ImageBrush ImageSource="../Icon/arrow_up.png"
+                x:Key="IconBrush4"></ImageBrush>
+    <ImageBrush ImageSource="../Icon/arrow_down.png"
+                x:Key="IconBrush5"></ImageBrush>
+    <ImageBrush x:Key="ApplicationBackgroundBrush"
+                ImageSource="../Assets/main_background.png"></ImageBrush>
+    <LinearGradientBrush x:Key="IconBrush6">
+        <GradientStop Color="#caefff" />
+        <GradientStop Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ApplicationChromeBrush">Gray</SolidColorBrush>
+</ResourceDictionary>

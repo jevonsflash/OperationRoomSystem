@@ -1,0 +1,94 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.OperationHubPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      DataContext="{Binding Source={StaticResource Locator} ,Path=OperationHubPage}"
+      Background="{StaticResource ApplicationBackgroundBrush}"
+      Title="OperationHubPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <control:TopBarControl Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalAlignment="Top"
+                               Grid.RowSpan="2"></control:TopBarControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Viewbox Height="300"
+                         Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverterReverse},ConverterParameter=Function1}">
+
+                    <Button Content="术野"
+                            Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                            CommandParameter="Function1"></Button>
+                </Viewbox>
+                <Viewbox Grid.Row="1"
+                         Height="300"
+                         Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverterReverse},ConverterParameter=Function2}">
+
+                    <Button Content="全景"
+                            Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                            CommandParameter="Function2"></Button>
+                </Viewbox>
+                <Viewbox Grid.Row="2"
+                         Height="300"
+                         Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverterReverse},ConverterParameter=Function3}">
+
+                    <Button Content="影像"
+                            Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                            CommandParameter="Function3"></Button>
+                </Viewbox>
+                <Viewbox Grid.Row="3"
+                         Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverterReverse},ConverterParameter=Function4}"
+                         Height="300">
+
+                    <Button Content="手麻"
+                            Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                            CommandParameter="Function4"></Button>
+                </Viewbox>
+            </Grid>
+            <Viewbox Grid.Column="1"
+                     Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function1}">
+                <local:RealTimeOperationPage></local:RealTimeOperationPage>
+
+            </Viewbox>
+            <Viewbox Grid.Column="1"
+                     Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function2}">
+                <Label>全景</Label>
+
+            </Viewbox>
+            <Viewbox Grid.Column="1"
+                     Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function3}">
+                <Label>影像</Label>
+
+            </Viewbox>
+            <Viewbox Grid.Column="1"
+                     Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function4}">
+                <Label>手麻</Label>
+
+            </Viewbox>
+        </Grid>
+    </Grid>
+
+</Page>

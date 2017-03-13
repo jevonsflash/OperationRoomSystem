@@ -1,0 +1,18 @@
+﻿<mah:MetroWindow x:Class="OperationRoomSystemPC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OperationRoomSystemPC"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:view="clr-namespace:OperationRoomSystemPC.View"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid>
+        <Frame x:Name="MainFrame"
+               Source="../View/LoginPage.xaml"
+               NavigationUIVisibility="Hidden" />
+    </Grid>
+</mah:MetroWindow>

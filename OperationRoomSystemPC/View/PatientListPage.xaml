@@ -1,0 +1,147 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.PatientListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      DataContext="{Binding Source={StaticResource Locator}, Path=PatientListPage}"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Background="{StaticResource ApplicationBackgroundBrush}"
+      Title="PatientListPage">
+ 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="11*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid  Margin="12"
+                       Height="64">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center"
+                           Content="医院"></Label>
+                    <ComboBox Grid.Column="1"
+                              Style="{StaticResource TransCodeComboBoxStyle}"></ComboBox>
+                </Grid>
+                <Grid Grid.Column="1"
+                      Margin="12"
+                      Height="64">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center"
+                           Content="科室"></Label>
+                    <ComboBox Grid.Column="1"
+                              Style="{StaticResource TransCodeComboBoxStyle}"></ComboBox>
+                </Grid>
+                <Grid Grid.Column="2"
+                      Margin="12"
+                      Height="64">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center"
+                           Content="姓名"></Label>
+                    <TextBox Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Column="3"
+                      Margin="12"
+                      Height="64">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center"
+                           Content="床号"></Label>
+                    <TextBox Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Column="4"
+                      Margin="12"
+                      Height="64">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalAlignment="Center"
+                           Content="住院号"></Label>
+                    <TextBox Grid.Column="1"></TextBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ListBox Background="Transparent"
+                         SelectedItem="{Binding SelectedPatientInfo}"
+                         ItemsSource="{Binding PatientInfos}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         Margin="20">
+
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="320"
+                                  Height="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Grid.ColumnSpan="2"
+                                           Fill="White"
+                                           Opacity="0.5"></Rectangle>
+                                <StackPanel Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Margin="10">
+                                    <Label Content="{Binding PatientName}"></Label>
+                                    <control:SimpleKeyValueControl KeyText="住院号"
+                                                                   ValueText="{Binding PatientNo}"
+                                                                   TextSize="18"></control:SimpleKeyValueControl>
+                                    <control:SimpleKeyValueControl KeyText="科室"
+                                                                   ValueText="{Binding DeptName}"
+                                                                   TextSize="18"></control:SimpleKeyValueControl>
+                                    <control:SimpleKeyValueControl KeyText="年龄"
+                                                                   ValueText="{Binding Birthday }"
+                                                                   TextSize="18"></control:SimpleKeyValueControl>
+                                    <control:SimpleKeyValueControl KeyText="住院天数"
+                                                                   ValueText="{Binding StartTime}"
+                                                                   TextSize="18"></control:SimpleKeyValueControl>
+                                </StackPanel>
+                                <Image Margin="10"
+                                       Grid.Column="1"
+                                       Source="../Assets/patient_w.png"></Image>
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+
+                </ListBox>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Column="1"
+                    VerticalAlignment="Bottom">
+            <control:SideBarControl ShowParam="import,logout,shutdown"></control:SideBarControl>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:OperationRoomSystemPC.Converter">
+    <converter:FunctionGroupConverter x:Key="FunctionGroupConverter" />
+    <converter:FunctionGroupVisibilityConverter x:Key="FunctionGroupVisibilityConverter" />
+    <converter:FunctionGroupVisibilityConverterReverse x:Key="FunctionGroupVisibilityConverterReverse" />
+    <converter:Bool2VisibilityConverter x:Key="Bool2VisibilityConverter"></converter:Bool2VisibilityConverter>
+</ResourceDictionary>

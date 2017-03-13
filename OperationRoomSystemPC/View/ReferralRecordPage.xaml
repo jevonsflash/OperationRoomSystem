@@ -1,0 +1,48 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.ReferralRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      Background="{StaticResource ApplicationBackgroundBrush}"
+      DataContext="{Binding Source={StaticResource Locator},Path=ReferralRecordPage}"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Title="ReferralRecordPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9.5*"></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Height="80"></Grid>
+                <control:SideSelectorControl Grid.Row="2"
+                                             Margin="0,10"
+                                             SelectorItemsSource="{Binding TabNavigationInfos}"
+                                             HeadTitle="转诊记录"></control:SideSelectorControl>
+
+            </Grid>
+        </Grid>
+        <control:TopBarControl Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalAlignment="Top"
+                               Grid.RowSpan="2"></control:TopBarControl>
+
+    </Grid>
+</Page>

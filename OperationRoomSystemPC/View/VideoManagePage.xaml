@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="OperationRoomSystemPC.View.VideoManagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      mc:Ignorable="d"
+      DataContext="{Binding Source={StaticResource Locator}, Path=VideoManagePage}"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920" Background="Transparent"
+      >
+
+    <Grid>
+        <ListView Background="Transparent"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin"
+                            Value="20"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListViewItem>
+                <Grid Width="320"
+                      Height="180">
+                    <Image Source="../Assets/surgery.png"></Image>
+                    <Border HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                        <Grid>
+                            <Rectangle Fill="{StaticResource ApplicationContrastBackgroundBrush}"
+                                       Opacity="0.8"></Rectangle>
+                            <Label HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Content="2017.2.2"></Label>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid Width="320"
+                      Height="180">
+                    <Image Source="../Assets/surgery.png"></Image>
+                    <Border HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                        <Grid>
+                            <Rectangle Fill="{StaticResource ApplicationContrastBackgroundBrush}"
+                                       Opacity="0.8"></Rectangle>
+                            <Label HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Content="2017.2.2"></Label>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ListViewItem>
+        </ListView>
+    </Grid>
+</UserControl>

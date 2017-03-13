@@ -1,0 +1,102 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.EMRHubPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Title="EMRHubPage"
+      DataContext="{Binding Source={StaticResource Locator}, Path=EMRHubPage}"
+      Background="{StaticResource ApplicationBackgroundBrush}">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9.5*"></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function1}">
+                <local:ConsultationReportPage>
+
+                </local:ConsultationReportPage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function2}">
+                <local:ConsultationInformationPage>
+
+                </local:ConsultationInformationPage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function3}">
+                <local:PatientCasePage>
+
+                </local:PatientCasePage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function4}">
+                <local:ConsultationCreatePage>
+
+                </local:ConsultationCreatePage>
+
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Height="80"></Grid>
+                <Grid Grid.Row="1"
+                      Margin="40,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <control:SideSelectorControl Grid.Row="0"
+                                                 Margin="0,10"
+                                                 SelectorItemsSource="{Binding TabNavigationInfos}"
+                                                 HeadTitle="入院病例"></control:SideSelectorControl>
+
+
+
+                    <control:SideSelectorControl  Grid.Row="1"
+                                                  Margin="0,10"
+                                                  SelectorItemsSource="{Binding TabNavigationInfos}"
+                                                  HeadTitle="日常病程"></control:SideSelectorControl>
+
+
+                    <control:SideSelectorControl Grid.Row="2"
+                                                 Margin="0,10"
+                                                 SelectorItemsSource="{Binding TabNavigationInfos}"
+                                                 HeadTitle="上级查房"></control:SideSelectorControl>
+                </Grid>
+            </Grid>
+        </Grid>
+        <control:TopBarControl Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalAlignment="Top"
+                               Grid.RowSpan="2"></control:TopBarControl>
+
+    </Grid>
+
+</Page>

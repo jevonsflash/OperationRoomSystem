@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{760F0BEB-AFF5-4938-AC92-B910EBBC4C6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OperationRoomSystemPC</RootNamespace>
+    <AssemblyName>OperationRoomSystemPC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.4.3.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core, Version=2.1.132.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.1.132\lib\net45\x86\Vlc.DotNet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.1.132.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.1.132\lib\net45\x86\Vlc.DotNet.Core.Interops.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.1.132.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.1.132\lib\net45\x86\Vlc.DotNet.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Wpf, Version=2.1.132.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Wpf.2.1.132\lib\net45\x86\Vlc.DotNet.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Assets\Config\CamaraConfig.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CamaraConfig.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CHCActivityData.cs" />
+    <Compile Include="Common\CHCNetSDK.cs" />
+    <Compile Include="Common\NavigationArg.cs" />
+    <Compile Include="Common\RichTextboxAssistant.cs" />
+    <Compile Include="Common\SideBarOnFinishedArg.cs" />
+    <Compile Include="Common\TabNavigationInfo.cs" />
+    <Compile Include="Common\TopBarOnFinishedArg.cs" />
+    <Compile Include="Control\CamaraControl.xaml.cs">
+      <DependentUpon>CamaraControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\RichTextEditor.xaml.cs">
+      <DependentUpon>RichTextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ShortcutControl.xaml.cs">
+      <DependentUpon>ShortcutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SideBarControl.xaml.cs">
+      <DependentUpon>SideBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SideSelectorControl.xaml.cs">
+      <DependentUpon>SideSelectorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SimpleKeyValueControl.xaml.cs">
+      <DependentUpon>SimpleKeyValueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TopBarControl.xaml.cs">
+      <DependentUpon>TopBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserPreviewControl.xaml.cs">
+      <DependentUpon>UserPreviewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Bool2VisibilityConverter.cs" />
+    <Compile Include="Converter\FunctionGroupConverter.cs" />
+    <Compile Include="Converter\FunctionGroupVisibilityConverterReverse.cs" />
+    <Compile Include="Converter\FunctionGroupVisibilityConverter.cs" />
+    <Compile Include="Enum\FunctionGroupEnum.cs" />
+    <Compile Include="Manager\DataManager.cs" />
+    <Compile Include="Model\DataModel\Patient.cs" />
+    <Compile Include="Model\IRoot.cs" />
+    <Compile Include="Model\OperationPlanInfo.cs" />
+    <Compile Include="Model\PatientInfo.cs" />
+    <Compile Include="Util\ElementTreeHelper.cs" />
+    <Compile Include="Util\TokenUtil.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlCssParser.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlFromXamlConverter.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlLexicalAnalyzer.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlParser.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlSchema.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlTokenType.cs" />
+    <Compile Include="Util\XamlToHtmlParser\HtmlToXamlConverter.cs" />
+    <Compile Include="ViewModel\ConsultationHubPageViewModel.cs" />
+    <Compile Include="ViewModel\EMRHubPageViewModel.cs" />
+    <Compile Include="ViewModel\FunctionGroupViewModel.cs" />
+    <Compile Include="ViewModel\OperationHubPageViewModel.cs" />
+    <Compile Include="ViewModel\OperationPlanPageViewModel.cs" />
+    <Compile Include="ViewModel\RealTimeOperationPageViewModel.cs" />
+    <Compile Include="ViewModel\ReferralRecordPageViewModel.cs" />
+    <Compile Include="ViewModel\SettingPageViewModel.cs" />
+    <Compile Include="ViewModel\UserEditPageViewModel.cs" />
+    <Compile Include="ViewModel\VideoHubPageViewModel.cs" />
+    <Compile Include="ViewModel\VideoManagePageViewModel.cs" />
+    <Compile Include="ViewModel\IndexPageViewModel.cs" />
+    <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PatientListPageViewModel.cs" />
+    <Compile Include="ViewModel\VideoRepositoryPageViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ConsultationCreatePage.xaml.cs">
+      <DependentUpon>ConsultationCreatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsultationHubPage.xaml.cs">
+      <DependentUpon>ConsultationHubPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsultationInformationPage.xaml.cs">
+      <DependentUpon>ConsultationInformationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsultationReportPage.xaml.cs">
+      <DependentUpon>ConsultationReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EMRHubPage.xaml.cs">
+      <DependentUpon>EMRHubPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OperationHubPage.xaml.cs">
+      <DependentUpon>OperationHubPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OperationPlanPage.xaml.cs">
+      <DependentUpon>OperationPlanPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientCasePage.xaml.cs">
+      <DependentUpon>PatientCasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientListPage.xaml.cs">
+      <DependentUpon>PatientListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RealTimeOperationPage.xaml.cs">
+      <DependentUpon>RealTimeOperationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferralRecordPage.xaml.cs">
+      <DependentUpon>ReferralRecordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserEditPage.xaml.cs">
+      <DependentUpon>UserEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoHubPage.xaml.cs">
+      <DependentUpon>VideoHubPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoManagePage.xaml.cs">
+      <DependentUpon>VideoManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VideoRepositoryPage.xaml.cs">
+      <DependentUpon>VideoRepositoryPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Control\CamaraControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\RichTextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\ShortcutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SideBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SideSelectorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\SimpleKeyValueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\TopBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\UserPreviewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Style\ApplicationSkinDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ConverterDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\PageSkinDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConsultationCreatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConsultationHubPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConsultationInformationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConsultationReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EMRHubPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OperationHubPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OperationPlanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientCasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RealTimeOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReferralRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoHubPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VideoRepositoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Assets\Config\CamaraConfig.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CamaraConfig.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\main_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\setting.png" />
+    <Resource Include="Icon\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\patient_m.png" />
+    <Resource Include="Assets\patient_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\icon_上级查房.png" />
+    <Resource Include="Icon\icon_会诊记录.png" />
+    <Resource Include="Icon\icon_入院记录.png" />
+    <Resource Include="Icon\icon_医嘱.png" />
+    <Resource Include="Icon\icon_历次手术.png" />
+    <Resource Include="Icon\icon_手术计划.png" />
+    <Resource Include="Icon\icon_日常病程.png" />
+    <Resource Include="Icon\icon_病情摘要.png" />
+    <Resource Include="Icon\icon_病案信息.png" />
+    <Resource Include="Icon\icon_视频管理.png" />
+    <Resource Include="Icon\icon_转诊记录.png" />
+    <Resource Include="Icon\icon_麻醉系统.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\operation_room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\exam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\icon_生命曲线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\xray_pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\xray_CR.png" />
+    <Resource Include="Assets\xray_CT.png" />
+    <Resource Include="Assets\xray_DR.png" />
+    <Resource Include="Assets\xray_DSR.png" />
+    <Resource Include="Assets\xray_GS.png" />
+    <Resource Include="Assets\xray_MR.png" />
+    <Resource Include="Assets\xray_PA.png" />
+    <Resource Include="Assets\xray_PET.png" />
+    <Resource Include="Assets\xray_RF.png" />
+    <Resource Include="Assets\xray_US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\doct.png" />
+    <Resource Include="Icon\pic.png" />
+    <Resource Include="Icon\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\surgery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\back.png" />
+    <Resource Include="Icon\house.png" />
+    <Resource Include="Icon\mini.png" />
+    <Resource Include="Icon\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\头像.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\arrow_down.png" />
+    <Resource Include="Icon\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\RichTextEditorIcon\charactergrowfont.png" />
+    <Resource Include="Icon\RichTextEditorIcon\charactershrinkfont.png" />
+    <Resource Include="Icon\RichTextEditorIcon\editcopy.png" />
+    <Resource Include="Icon\RichTextEditorIcon\editcut.png" />
+    <Resource Include="Icon\RichTextEditorIcon\editpaste.png" />
+    <Resource Include="Icon\RichTextEditorIcon\editredo.png" />
+    <Resource Include="Icon\RichTextEditorIcon\editundo.png" />
+    <Resource Include="Icon\RichTextEditorIcon\fileopen.png" />
+    <Resource Include="Icon\RichTextEditorIcon\filesave.png" />
+    <Resource Include="Icon\RichTextEditorIcon\listbullets.png" />
+    <Resource Include="Icon\RichTextEditorIcon\listnumbering.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphcenterjustify.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphdecreaseindentation.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphfulljustify.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphincreaseindentation.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphleftjustify.png" />
+    <Resource Include="Icon\RichTextEditorIcon\paragraphrightjustify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\edit.png" />
+    <Resource Include="Icon\save.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

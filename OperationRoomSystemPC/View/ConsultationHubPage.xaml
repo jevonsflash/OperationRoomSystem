@@ -1,0 +1,121 @@
+﻿<Page x:Class="OperationRoomSystemPC.View.ConsultationHubPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:view="clr-namespace:OperationRoomSystemPC.View"
+      xmlns:control="clr-namespace:OperationRoomSystemPC.Control"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      DataContext="{Binding Source={StaticResource Locator}, Path=ConsultationHubPage}"
+      Background="{StaticResource ApplicationBackgroundBrush}"
+      Title="ConsultationHubPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9.5*"></ColumnDefinition>
+                <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function1}">
+                <view:ConsultationReportPage>
+
+                </view:ConsultationReportPage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function2}">
+                <view:ConsultationInformationPage>
+
+                </view:ConsultationInformationPage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function3}">
+                <view:PatientCasePage>
+
+                </view:PatientCasePage>
+
+
+            </Grid>
+            <Grid Grid.Column="0"
+                  Visibility="{Binding FunctionGroupViewModel.CurrentFunc,Converter={StaticResource FunctionGroupVisibilityConverter},ConverterParameter=Function4}">
+                <view:ConsultationCreatePage>
+
+                </view:ConsultationCreatePage>
+
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Height="80"></Grid>
+                <Grid Grid.Row="1"
+                      Margin="40,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ToggleButton Grid.Row="0"
+                                  Margin="0,10"
+                                  IsChecked="{Binding FunctionGroupViewModel.CurrentFunc, Converter={StaticResource FunctionGroupConverter},ConverterParameter=Function1 }"
+                                  Style="{StaticResource TabToggleButtonStyle}"
+                                  Click="ButtonBase_OnClick"
+                                  Checked="ToggleButton_OnChecked"
+                                  Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                                  CommandParameter="Function1"
+                                  Content="会诊报告"></ToggleButton>
+                    <ToggleButton Grid.Row="1"
+                                  Margin="0,10"
+                                  IsChecked="{Binding FunctionGroupViewModel.CurrentFunc, Converter={StaticResource FunctionGroupConverter},ConverterParameter=Function2 }"
+                                  Checked="ToggleButton_OnChecked"
+                                  Click="ButtonBase_OnClick"
+                                  Style="{StaticResource TabToggleButtonStyle}"
+                                  Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                                  CommandParameter="Function2"
+                                  Content="会诊信息"></ToggleButton>
+                    <ToggleButton Grid.Row="2"
+                                  Margin="0,10"
+                                  IsChecked="{Binding FunctionGroupViewModel.CurrentFunc, Converter={StaticResource FunctionGroupConverter},ConverterParameter=Function3 }"
+                                  Style="{StaticResource TabToggleButtonStyle}"
+                                  Checked="ToggleButton_OnChecked"
+                                  Click="ButtonBase_OnClick"
+                                  Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                                  CommandParameter="Function3"
+                                  Content="患者病例"></ToggleButton>
+                    <ToggleButton Grid.Row="3"
+                                  Margin="0,10"
+                                  IsChecked="{Binding FunctionGroupViewModel.CurrentFunc, Converter={StaticResource FunctionGroupConverter},ConverterParameter=Function4 }"
+                                  Style="{StaticResource TabToggleButtonStyle}"
+                                  Checked="ToggleButton_OnChecked"
+                                  Click="ButtonBase_OnClick"
+                                  Command="{Binding FunctionGroupViewModel.FunctionGroupSwitchCommand}"
+                                  CommandParameter="Function4"
+                                  Content="创建会诊"></ToggleButton>
+                </Grid>
+            </Grid>
+        </Grid>
+        <control:TopBarControl Grid.Column="0"
+                               Grid.Row="0"
+                               VerticalAlignment="Top"
+                             
+                               Grid.RowSpan="2"></control:TopBarControl>
+
+    </Grid>
+</Page>
